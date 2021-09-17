@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "9600e5bd-6631-4d5f-81d0-ce0fe04e08c2",
+		"name": "EMPRESTA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Convenios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/convenants/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"convenants",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Instrituições",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/institutions/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"institutions",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Taxas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"valor_emprestimo\" : 2500.00,\r\n    \"instituicoes\" : [\"BMG\", \"OLE\"],\r\n    \"convenios\": [\"FEDERAL\", \"INSS\"],\r\n    \"parcela\": [\"72\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/institutions/fee-simulator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"institutions",
+						"fee-simulator"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
